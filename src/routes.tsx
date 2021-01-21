@@ -1,11 +1,10 @@
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {RootStackParamList} from '@react-navigation';
 
 import PokemonList from './pages/PokemonList';
 import PokemonDetails from './pages/PokemonDetails';
 
-const MainRoute = createStackNavigator<RootStackParamList>();
+const MainRoute = createStackNavigator();
 
 function Routes() {
   return (
@@ -27,7 +26,23 @@ function Routes() {
           headerTitleAlign: 'center',
         }}
       />
-      <MainRoute.Screen name="PokemonDetails" component={PokemonDetails} />
+      <MainRoute.Screen
+        name="PokemonDetails"
+        component={PokemonDetails}
+        options={({route}) => ({
+          title: route.params?.name,
+          headerStyle: {
+            backgroundColor: '#e54d1c',
+            height: 100,
+          },
+          headerTintColor: '#FEDD01',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 38,
+          },
+          headerTitleAlign: 'center',
+        })}
+      />
     </MainRoute.Navigator>
   );
 }

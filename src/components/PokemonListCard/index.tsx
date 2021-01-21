@@ -14,11 +14,11 @@ interface IOtherInformations {
   image_url: string;
 }
 
-interface IPokemonListItem {
+interface IPokemonListCard {
   item: IPokemon;
 }
 
-const PokemonListItem: React.FC<IPokemonListItem> = ({
+const PokemonListCard: React.FC<IPokemonListCard> = ({
   item,
   navigationProp,
 }) => {
@@ -45,7 +45,14 @@ const PokemonListItem: React.FC<IPokemonListItem> = ({
   }, [item.url]);
 
   return (
-    <PokemonCart onPress={() => navigationProp.navigate('PokemonDetails')}>
+    <PokemonCart
+      onPress={() =>
+        navigationProp.navigate('PokemonDetails', {
+          name: item.name,
+          url: item.url,
+          image_url: moreInformations.image_url,
+        })
+      }>
       <PokemonImage source={{uri: moreInformations.image_url}} />
       <PokemonInfoContainer>
         <PokemonName>{item.name}</PokemonName>
@@ -54,4 +61,4 @@ const PokemonListItem: React.FC<IPokemonListItem> = ({
   );
 };
 
-export default PokemonListItem;
+export default PokemonListCard;

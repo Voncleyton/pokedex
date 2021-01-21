@@ -4,10 +4,10 @@ import {RootStackParamList} from '@react-navigation';
 import {FlatList} from 'react-native-gesture-handler';
 
 import api from '../../services/api';
-import PokemonListItem from '../../components/PokemonListItem';
 import Loader from '../../components/Loader';
 
 import {Container} from './styles';
+import PokemonListCard from '../../components/PokemonListCard';
 
 export interface IPokemon {
   name: string;
@@ -48,7 +48,7 @@ const PokemonList: React.FC<IPokemonListProps> = ({navigation}) => {
         data={pokemons}
         keyExtractor={(pokemon) => pokemon.name}
         renderItem={({item: pokemon}) => (
-          <PokemonListItem item={pokemon} navigationProp={navigation} />
+          <PokemonListCard item={pokemon} navigationProp={navigation} />
         )}
         onEndReached={handleLoadMorePokemons}
         onEndReachedThreshold={0.5}
