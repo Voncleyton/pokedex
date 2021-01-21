@@ -12,6 +12,7 @@ export const PokemonCart = styled.View`
   background: #e54d1c;
   padding: 5px;
   border-radius: 15px;
+  border: 4px solid #fedd01;
 `;
 
 export const PokemonImage = styled(Image)`
@@ -20,13 +21,13 @@ export const PokemonImage = styled(Image)`
 `;
 
 export const Title = styled.Text`
-  font-size: 24;
+  font-size: 24px;
   font-weight: bold;
   color: #fff;
 `;
 
 export const Description = styled.Text`
-  font-size: 16;
+  font-size: 16px;
   font-weight: bold;
   color: #fff;
 `;
@@ -50,6 +51,7 @@ export const PokemonTypesContainer = styled.View`
   flex: 1;
   align-items: center;
   justify-content: space-between;
+  margin-top: 5px;
 `;
 
 export const Type = styled.View`

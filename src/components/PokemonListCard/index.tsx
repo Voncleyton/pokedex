@@ -8,22 +8,21 @@ import {
   PokemonImage,
   PokemonInfoContainer,
 } from './styles';
+
 import axios from 'axios';
+import formatName from '../../services/formatName';
 
 interface IOtherInformations {
-  image_url: string;
+  imageUrl: string;
 }
 
 interface IPokemonListCard {
   item: IPokemon;
 }
 
-const PokemonListCard: React.FC<IPokemonListCard> = ({
-  item,
-  navigationProp,
-}) => {
+const PokemonListCard: React.FC<IPokemonListCard> = ({item}) => {
   const initialOtherInformations: IOtherInformations = {
-    image_url:
+    imageUrl:
       'http://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Images.png',
   };
 
@@ -36,8 +35,7 @@ const PokemonListCard: React.FC<IPokemonListCard> = ({
       const response = await axios.get(item.url);
 
       setMoreInformations({
-        image_url:
-          response.data.sprites.other['official-artwork'].front_default,
+        imageUrl: response.data.sprites.other['official-artwork'].front_default,
       });
     };
 
@@ -45,17 +43,10 @@ const PokemonListCard: React.FC<IPokemonListCard> = ({
   }, [item.url]);
 
   return (
-    <PokemonCart
-      onPress={() =>
-        navigationProp.navigate('PokemonDetails', {
-          name: item.name,
-          url: item.url,
-          image_url: moreInformations.image_url,
-        })
-      }>
-      <PokemonImage source={{uri: moreInformations.image_url}} />
+    <PokemonCart>
+      <PokemonImage source={{uri: moreInformations.imageUrl}} />
       <PokemonInfoContainer>
-        <PokemonName>{item.name}</PokemonName>
+        <PokemonName>{formatName(item.name)}</PokemonName>
       </PokemonInfoContainer>
     </PokemonCart>
   );

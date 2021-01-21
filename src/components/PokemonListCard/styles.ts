@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
-import {Image, TouchableOpacity} from 'react-native';
+import {Image} from 'react-native';
 
-export const PokemonCart = styled(TouchableOpacity)`
+export const PokemonCart = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
@@ -10,6 +10,7 @@ export const PokemonCart = styled(TouchableOpacity)`
   background: #e54d1c;
   padding: 5px;
   border-radius: 15px;
+  border: 4px solid #fedd01;
 `;
 
 export const PokemonImage = styled(Image)`
@@ -23,7 +24,7 @@ export const PokemonInfoContainer = styled.View`
 `;
 
 export const PokemonName = styled.Text`
-  font-size: 24;
+  font-size: 24px;
   font-weight: bold;
   color: #fedd01;
 `;

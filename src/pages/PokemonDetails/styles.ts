@@ -6,7 +6,7 @@ export const Container = styled.ScrollView`
 `;
 
 export const PokemonName = styled.Text`
-  font-size: 24;
+  font-size: 24px;
   font-weight: bold;
   color: #fedd01;
 `;
