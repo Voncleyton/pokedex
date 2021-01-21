@@ -2,15 +2,14 @@ import React from 'react';
 
 import {Text} from 'react-native';
 
-import {
-  StatsContainer,
-  InfoContainer,
-  Title,
-  Line,
-  Description,
-} from './styles';
+import {StatsContainer, InfoContainer, Title, Description} from './styles';
+import {IPokemonStat} from '../../globalTypes';
 
-const PokemonStats: React.FC = ({stats}) => {
+interface IPokemonStatsProps {
+  stats: IPokemonStat[];
+}
+
+const PokemonStats: React.FC<IPokemonStatsProps> = ({stats}) => {
   return (
     <>
       <StatsContainer>

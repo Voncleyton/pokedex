@@ -1,6 +1,4 @@
-import React, {useState, useEffect} from 'react';
-
-import {Text} from 'react-native';
+import React from 'react';
 
 import {
   PokemonCart,
@@ -14,23 +12,26 @@ import {
 } from './styles';
 import {IPokemonDetails} from '../../globalTypes';
 
-const PokemonDetailsCard: React.FC<IPokemonDetails> = ({details}) => {
-  useEffect(() => {
-    console.log('teste');
-  }, []);
+interface IPokemoDetailsProps {
+  details: IPokemonDetails;
+}
+
+const PokemonDetailsCard: React.FC<IPokemoDetailsProps> = ({details}) => {
+  const defaultImageUrl =
+    'http://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Images.png';
 
   return (
     <PokemonCart>
-      <PokemonImage source={{uri: details.image_url}} />
+      <PokemonImage source={{uri: details.imageUrl || defaultImageUrl}} />
 
       <PokemonDescriptionsContainer>
         <PokemonInfoContainer>
           <Title>{'Height'}</Title>
-          <Description>{details.height}</Description>
+          <Description>{`${details.height / 10} m`}</Description>
         </PokemonInfoContainer>
         <PokemonInfoContainer>
           <Title>{'Weight'}</Title>
-          <Description>{details.weight}</Description>
+          <Description>{`${details.weight / 10} Kg`}</Description>
         </PokemonInfoContainer>
       </PokemonDescriptionsContainer>
 
@@ -39,8 +40,8 @@ const PokemonDetailsCard: React.FC<IPokemonDetails> = ({details}) => {
       <PokemonTypesContainer>
         {details.types
           ? details.types.map((t) => (
-              <Type>
-                <Description key={t}>{t}</Description>
+              <Type key={t}>
+                <Description>{t}</Description>
               </Type>
             ))
           : null}

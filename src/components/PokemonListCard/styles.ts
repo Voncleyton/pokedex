@@ -10,6 +10,7 @@ export const PokemonCart = styled.View`
   background: #e54d1c;
   padding: 5px;
   border-radius: 15px;
+  border: 4px solid #fedd01;
 `;
 
 export const PokemonImage = styled(Image)`
@@ -23,7 +24,7 @@ export const PokemonInfoContainer = styled.View`
 `;
 
 export const PokemonName = styled.Text`
-  font-size: 24;
+  font-size: 24px;
   font-weight: bold;
   color: #fedd01;
 `;

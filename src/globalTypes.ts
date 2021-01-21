@@ -3,28 +3,22 @@ export interface IPokemon {
   url: string;
 }
 
+export interface IPokemonStat {
+  name: string;
+  value: number;
+}
+export interface IPokemonAbility {
+  name: string;
+  info: string;
+}
+
 export interface IPokemonDetails {
   name: string;
-  image_url: string;
+  imageUrl: string;
   height: number;
   weight: number;
   types: string[];
-  stats: [
-    {
-      name: string;
-      value: number;
-    },
-  ];
-  evolutions: [
-    {
-      name: string;
-      image_url: string;
-    },
-  ];
-  // abiliteis: [
-  //   {
-  //     name: string;
-  //     info: string;
-  //   },
-  // ];
+  stats: [IPokemonStat];
+  //abiliteis: [IPokemonAbility];
+  //evolutions: [IPokemon];
 }

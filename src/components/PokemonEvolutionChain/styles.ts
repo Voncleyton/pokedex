@@ -15,7 +15,7 @@ export const PokemonImage = styled(Image)`
 `;
 
 export const PokemonName = styled.Text`
-  font-size: 24;
+  font-size: 24px;
   font-weight: bold;
   color: #fedd01;
 `;

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '@react-navigation';
-import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
+import {FlatList, TouchableOpacity} from 'react-native';
 
 import api from '../../services/api';
 import Loader from '../../components/Loader';
@@ -58,6 +58,7 @@ const PokemonList: React.FC<IPokemonListProps> = ({navigation}) => {
             <PokemonListCard item={pokemon} />
           </TouchableOpacity>
         )}
+        showsVerticalScrollIndicator={false}
         onEndReached={handleLoadMorePokemons}
         onEndReachedThreshold={0.5}
         ListFooterComponent={<Loader loading={loading} />}
