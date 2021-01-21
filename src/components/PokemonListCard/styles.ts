@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
-import {Image, TouchableOpacity} from 'react-native';
+import {Image} from 'react-native';
 
-export const PokemonCart = styled(TouchableOpacity)`
+export const PokemonCart = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;

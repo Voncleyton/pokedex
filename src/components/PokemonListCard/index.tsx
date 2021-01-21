@@ -8,6 +8,7 @@ import {
   PokemonImage,
   PokemonInfoContainer,
 } from './styles';
+
 import axios from 'axios';
 
 interface IOtherInformations {
@@ -45,14 +46,7 @@ const PokemonListCard: React.FC<IPokemonListCard> = ({
   }, [item.url]);
 
   return (
-    <PokemonCart
-      onPress={() =>
-        navigationProp.navigate('PokemonDetails', {
-          name: item.name,
-          url: item.url,
-          image_url: moreInformations.image_url,
-        })
-      }>
+    <PokemonCart>
       <PokemonImage source={{uri: moreInformations.image_url}} />
       <PokemonInfoContainer>
         <PokemonName>{item.name}</PokemonName>

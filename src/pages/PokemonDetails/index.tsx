@@ -44,6 +44,7 @@ const PokemonDetails: React.FC<IPokemonListProps> = ({navigation, route}) => {
 
     getPokemonDetails();
   }, []);
+
   return (
     <Container>
       <PokemonDetailsCard details={pokemonDetails} />
