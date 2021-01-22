@@ -16,7 +16,7 @@ function Routes() {
         options={{
           title: 'Pokédex',
           headerStyle: {
-            backgroundColor: '#e54d1c',
+            backgroundColor: '#e64e1c',
             height: 100,
             borderBottomWidth: 2,
             borderBottomColor: '#fedd01',
@@ -37,7 +37,7 @@ function Routes() {
         options={({route}) => ({
           title: formatName(route.params?.name),
           headerStyle: {
-            backgroundColor: '#e54d1c',
+            backgroundColor: '#e64e1c',
             height: 100,
             borderBottomWidth: 2,
             borderBottomColor: '#fedd01',

@@ -9,7 +9,7 @@ export const PokemonCart = styled.View`
   justify-content: space-around;
   height: auto;
   margin-top: 15px;
-  background: #e54d1c;
+  background: #e64e1c;
   padding: 5px;
   border-radius: 15px;
   border: 4px solid #fedd01;
@@ -56,7 +56,7 @@ export const PokemonTypesContainer = styled.View`
 
 export const Type = styled.View`
   padding: 5px 15px 5px 15px;
-  background: #999;
+  background: #3481ca;
   border-radius: 10px;
   margin: 0 5px 0 5px;
 `;

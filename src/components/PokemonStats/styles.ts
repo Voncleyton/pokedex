@@ -7,7 +7,7 @@ export const StatsContainer = styled.View`
   flex-direction: column;
   height: auto;
   margin-top: 15px;
-  background: #4aa8d7;
+  background: #3b4cca;
   padding: 10px 25px 10px 25px;
   border-radius: 15px;
   border: 4px solid #fedd01;

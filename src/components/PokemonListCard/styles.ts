@@ -7,7 +7,7 @@ export const PokemonCart = styled.View`
   justify-content: space-around;
   height: auto;
   margin-top: 15px;
-  background: #e54d1c;
+  background: #e64e1c;
   padding: 5px;
   border-radius: 15px;
   border: 4px solid #fedd01;
